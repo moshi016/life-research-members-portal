@@ -515,16 +515,6 @@ model supervision_trainee {
   @@id([member_id, supervision_id], map: "PK_supervision_trainee")
 }
 
-model sysdiagrams {
-  name         String @db.NVarChar(128)
-  principal_id Int
-  diagram_id   Int    @id(map: "PK__sysdiagr__C2B05B6138BE0713") @default(autoincrement())
-  version      Int?
-  definition   Bytes?
-
-  @@unique([principal_id, name], map: "UK_principal_name")
-}
-
 model target {
   id             Int              @id(map: "PK_target_stakeholder") @default(autoincrement())
   name_fr        String           @db.NVarChar(300)
